@@ -1,0 +1,86 @@
+
+:root {
+    /* Blue & White Theme */
+    --c-900: 248 250 252; /* Slate 50 (Very light blue-grey background) */
+    --c-800: 255 255 255; /* White (Cards) */
+    --c-700: 226 232 240; /* Slate 200 (Borders) */
+    --c-600: 148 163 184; /* Slate 400 */
+    --c-accent: 37 99 235; /* Blue 600 (Primary UI Accent) */
+    --c-glow: 29 78 216; /* Blue 700 */
+
+    --t-main: 15 23 42; /* Slate 900 (Main Text) */
+    --t-sub: 51 65 85; /* Slate 700 */
+    --t-muted: 100 116 139; /* Slate 500 */
+
+    --success-light: 16 185 129; 
+    --success-main: 5 150 105; 
+    --success-dark: 4 120 87; 
+
+    --pink-light: 236 72 153; 
+    --pink-main: 219 39 119; 
+    --pink-dark: 190 24 93; 
+
+    --purple-light: 139 92 246; 
+    --purple-main: 124 58 237; 
+    --purple-dark: 109 40 217; 
+
+    --orange-main: 234 88 12; 
+    --orange-dark: 194 65 12; 
+
+    --red-main: 220 38 38; 
+    --red-dark: 185 28 28; 
+
+    --amber-main: 217 119 6; 
+}
+
+/* Modif Garis Berserak (Scattered Lines Background Pattern) */
+.app-bg-pattern {
+    background-color: rgb(var(--c-900));
+    background-image: url("data:image/svg+xml,%3Csvg width='120' height='120' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10,-10 L40,20 M110,90 L130,110 M-10,50 L20,80 M70,110 L100,140 M50,30 L80,60 M20,10 L60,50 M80,-10 L120,30' stroke='rgba(37,99,235,0.06)' stroke-width='2' stroke-linecap='round' fill='none'/%3E%3Cpath d='M90,10 L70,30 M40,60 L20,80 M110,40 L90,60 M60,90 L40,110' stroke='rgba(37,99,235,0.04)' stroke-width='1.5' stroke-linecap='round' fill='none'/%3E%3C/svg%3E");
+}
+
+.custom-scrollbar::-webkit-scrollbar { width: 6px; height: 6px; }
+.custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+.custom-scrollbar::-webkit-scrollbar-thumb { background: rgb(var(--c-700)); border-radius: 4px; }
+.custom-scrollbar::-webkit-scrollbar-thumb:hover { background: rgb(var(--c-accent)); }
+
+.fade-in { animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.cyber-input {
+    background-color: rgba(var(--c-900), 0.5);
+    border: 2px solid rgb(var(--c-700));
+    color: rgb(var(--t-main));
+    font-family: 'Fira Code', monospace;
+    transition: all 0.2s ease;
+}
+.cyber-input:focus {
+    outline: none;
+    border-color: rgb(var(--c-accent));
+    box-shadow: 0 0 12px rgba(var(--c-accent), 0.15);
+    background-color: rgb(var(--c-800));
+}
+.cyber-input.invalid {
+    border-color: rgb(var(--red-main));
+    box-shadow: 0 0 12px rgba(var(--red-main), 0.2);
+    color: rgb(var(--red-main));
+    animation: shake 0.3s cubic-bezier(.36,.07,.19,.97) both;
+}
+
+@keyframes shake {
+  10%, 90% { transform: translate3d(-1px, 0, 0); }
+  20%, 80% { transform: translate3d(2px, 0, 0); }
+  30%, 50%, 70% { transform: translate3d(-3px, 0, 0); }
+  40%, 60% { transform: translate3d(3px, 0, 0); }
+}
+
+body, main, header, aside, div, span, p, h1, h2, h3, h4, button, input {
+    transition: background-color 0.4s ease, border-color 0.4s ease, color 0.4s ease;
+}
+
+body { background-color: rgb(var(--c-900)); color: rgb(var(--t-main)); }
+
+/* To force light mode aesthetics, we'll override dark classes if they exist, or just rely on the new palette */

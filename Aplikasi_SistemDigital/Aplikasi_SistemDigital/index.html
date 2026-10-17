@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Pembelajaran Sistem Digital</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['Fira Code', 'monospace'],
+                    },
+                    colors: {
+                        cyber: {
+                            900: 'rgb(var(--c-900) / <alpha-value>)',
+                            800: 'rgb(var(--c-800) / <alpha-value>)',
+                            700: 'rgb(var(--c-700) / <alpha-value>)',
+                            600: 'rgb(var(--c-600) / <alpha-value>)',
+                            accent: 'rgb(var(--c-accent) / <alpha-value>)',
+                            glow: 'rgb(var(--c-glow) / <alpha-value>)'
+                        },
+                        white: 'rgb(var(--t-main) / <alpha-value>)',
+                        slate: {
+                            200: 'rgb(var(--t-sub) / <alpha-value>)',
+                            300: 'rgb(var(--t-sub) / <alpha-value>)',
+                            400: 'rgb(var(--t-muted) / <alpha-value>)',
+                            500: 'rgb(var(--t-muted) / <alpha-value>)',
+                        },
+                        emerald: { 
+                            300: 'rgb(var(--success-light) / <alpha-value>)', 
+                            400: 'rgb(var(--success-main) / <alpha-value>)',
+                            500: 'rgb(var(--success-dark) / <alpha-value>)' 
+                        },
+                        pink: { 
+                            300: 'rgb(var(--pink-light) / <alpha-value>)', 
+                            400: 'rgb(var(--pink-main) / <alpha-value>)', 
+                            500: 'rgb(var(--pink-dark) / <alpha-value>)' 
+                        },
+                        purple: { 
+                            300: 'rgb(var(--purple-light) / <alpha-value>)', 
+                            400: 'rgb(var(--purple-main) / <alpha-value>)', 
+                            500: 'rgb(var(--purple-dark) / <alpha-value>)' 
+                        },
+                        orange: { 
+                            400: 'rgb(var(--orange-main) / <alpha-value>)', 
+                            500: 'rgb(var(--orange-dark) / <alpha-value>)' 
+                        },
+                        red: { 
+                            400: 'rgb(var(--red-main) / <alpha-value>)', 
+                            500: 'rgb(var(--red-dark) / <alpha-value>)' 
+                        },
+                        amber: {
+                            500: 'rgb(var(--amber-main) / <alpha-value>)'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-cyber-900 text-slate-300 font-sans min-h-screen flex overflow-hidden selection:bg-cyber-accent selection:text-white dark">
+    
+    <!-- Sidebar / Collapsible Accordion Navigation -->
+    <aside class="w-72 bg-cyber-800 border-r border-cyber-700 flex flex-col h-screen shadow-2xl z-20 transition-transform duration-300 shrink-0">
+        <div class="p-6 border-b border-cyber-700 bg-cyber-900/30">
+            <h1 class="text-xl font-bold text-white tracking-wide flex items-center gap-2">
+                <span class="text-cyber-accent">⚡</span> Digisys<span class="font-light text-slate-400">Hub</span>
+            </h1>
+            <p class="text-xs text-slate-500 mt-2 font-medium">Sistem Digital EduPlatform</p>
+        </div>
+        
+        <nav class="flex-1 overflow-y-auto p-4 custom-scrollbar space-y-2" id="sidebar-nav">
+            <!-- Data-driven navigation items will be injected here by app.js -->
+        </nav>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="flex-1 flex flex-col h-screen relative overflow-hidden app-bg-pattern">
+        
+        <!-- Header Topbar -->
+        <header class="h-16 border-b border-cyber-700 bg-cyber-800/80 backdrop-blur-md flex items-center justify-between px-8 z-10 shadow-sm shrink-0">
+            <div class="flex items-center gap-3">
+                <h2 class="text-lg font-semibold text-white tracking-wide" id="current-page-title">Memuat...</h2>
+            </div>
+            <div class="flex items-center gap-4">
+                <span class="px-3 py-1 text-xs rounded-full bg-cyber-700/50 text-cyber-accent border border-cyber-600/50 font-mono tracking-wider shadow-inner" id="current-page-badge">
+                    INIT
+                </span>
+                
+                <!-- Theme Toggle Button -->
+                <button id="theme-toggle" class="p-2 rounded-full bg-cyber-700/50 hover:bg-cyber-600/50 text-cyber-accent transition-colors border border-cyber-600/30 shadow-sm" title="Toggle Theme (Light/Dark)">
+                    <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+                    <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                </button>
+            </div>
+        </header>
+
+        <!-- Dynamic Content Area -->
+        <div class="flex-1 overflow-y-auto p-4 sm:p-8 custom-scrollbar relative" id="main-content">
+            <!-- Modules will be rendered here -->
+        </div>
+
+    </main>
+
+    
+    <script src="js/data.js"></script>
+    <script src="js/week1.js"></script>
+    <script src="js/week2.js"></script>
+    <script src="js/week3.js"></script>
+    <script src="js/week4.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+</html>

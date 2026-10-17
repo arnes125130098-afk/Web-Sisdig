@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Pembelajaran Sistem Digital</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['Fira Code', 'monospace'],
+                    },
+                    colors: {
+                        cyber: {
+                            900: 'rgb(var(--c-900) / <alpha-value>)',
+                            800: 'rgb(var(--c-800) / <alpha-value>)',
+                            700: 'rgb(var(--c-700) / <alpha-value>)',
+                            600: 'rgb(var(--c-600) / <alpha-value>)',
+                            accent: 'rgb(var(--c-accent) / <alpha-value>)',
+                            glow: 'rgb(var(--c-glow) / <alpha-value>)'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-cyber-900 text-slate-800 font-sans min-h-screen flex overflow-hidden selection:bg-blue-600 selection:text-white">
+    
+    <!-- Sidebar / Collapsible Accordion Navigation -->
+    <aside class="w-80 bg-white border-r border-slate-200 flex flex-col h-screen shadow-xl z-20 transition-transform duration-300 shrink-0">
+        <div class="p-5 border-b border-slate-200 bg-slate-50/70">
+            <h1 class="text-lg font-bold text-slate-900 tracking-tight flex items-center gap-2">
+                <span class="text-blue-600 text-xl">⚡</span> Media Pembelajaran <span class="font-extrabold text-blue-600">Sistem Digital</span>
+            </h1>
+            <p class="text-[11px] text-slate-500 mt-1 font-medium">Interaktif 14 Minggu Kurikulum Perkuliahan</p>
+        </div>
+        
+        <nav class="flex-1 overflow-y-auto p-4 custom-scrollbar space-y-1.5" id="sidebar-nav">
+            <!-- Data-driven navigation items injected here -->
+        </nav>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="flex-1 flex flex-col h-screen relative overflow-hidden app-bg-pattern">
+        
+        <!-- Header Topbar -->
+        <header class="h-16 border-b border-slate-200 bg-white/90 backdrop-blur-md flex items-center justify-between px-8 z-10 shadow-sm shrink-0">
+            <div class="flex items-center gap-3">
+                <h2 class="text-lg font-bold text-slate-900 tracking-tight" id="current-page-title">Memuat...</h2>
+            </div>
+            <div class="flex items-center gap-3">
+                <span class="px-3 py-1 text-xs rounded-full bg-blue-50 text-blue-700 border border-blue-200 font-mono font-bold tracking-wider" id="current-page-badge">
+                    TEORI
+                </span>
+                
+                <!-- Theme Toggle Button -->
+                <button id="theme-toggle" class="p-2 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-700 transition-colors border border-slate-200 shadow-sm" title="Toggle Mode">
+                    <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+                    <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                </button>
+            </div>
+        </header>
+
+        <!-- Dynamic Content Area -->
+        <div class="flex-1 overflow-y-auto p-4 sm:p-8 custom-scrollbar relative" id="main-content">
+            <!-- Dynamic Module Content Injected Here -->
+        </div>
+
+    </main>
+
+    <!-- Load Scripts In Proper Order -->
+    <script src="js/data.js"></script>
+    <script src="js/week1.js"></script>
+    <script src="js/week2.js"></script>
+    <script src="js/week3.js"></script>
+    <script src="js/week4.js"></script>
+    <script src="js/week5.js"></script>
+    <script src="js/week6.js"></script>
+    <script src="js/week7.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,142 @@
+/* 
+  Custom Cyber-Tech Aesthetic Styles 
+  with Global Theme Support (Light/Dark)
+*/
+
+:root {
+    /* Light Mode Palette */
+    --c-900: 248 250 252; /* slate-50 */
+    --c-800: 255 255 255; /* white */
+    --c-700: 226 232 240; /* slate-200 */
+    --c-600: 203 213 225; /* slate-300 */
+    --c-accent: 2 132 199; /* sky-600 */
+    --c-glow: 3 105 161; /* sky-700 */
+
+    --t-main: 15 23 42; /* slate-900 (used for white) */
+    --t-sub: 51 65 85; /* slate-700 (used for slate-200/300) */
+    --t-muted: 100 116 139; /* slate-500 (used for slate-400/500) */
+
+    --success-light: 16 185 129; /* emerald-500 */
+    --success-main: 5 150 105; /* emerald-600 */
+    --success-dark: 4 120 87; /* emerald-700 */
+
+    --pink-light: 236 72 153; /* pink-500 */
+    --pink-main: 219 39 119; /* pink-600 */
+    --pink-dark: 190 24 93; /* pink-700 */
+
+    --purple-light: 139 92 246; /* violet-500 */
+    --purple-main: 124 58 237; /* violet-600 */
+    --purple-dark: 109 40 217; /* violet-700 */
+
+    --orange-main: 234 88 12; /* orange-600 */
+    --orange-dark: 194 65 12; /* orange-700 */
+
+    --red-main: 220 38 38; /* red-600 */
+    --red-dark: 185 28 28; /* red-700 */
+
+    --amber-main: 217 119 6; /* amber-600 */
+}
+
+.dark {
+    /* Dark Mode Palette (Original) */
+    --c-900: 15 23 42; /* slate-900 */
+    --c-800: 30 41 59; /* slate-800 */
+    --c-700: 51 65 85; /* slate-700 */
+    --c-600: 71 85 105; /* slate-600 */
+    --c-accent: 6 182 212; /* cyan-500 */
+    --c-glow: 34 211 238; /* cyan-400 */
+
+    --t-main: 255 255 255; /* white */
+    --t-sub: 203 213 225; /* slate-300 */
+    --t-muted: 148 163 184; /* slate-400 */
+
+    --success-light: 110 231 183; /* emerald-300 */
+    --success-main: 52 211 153; /* emerald-400 */
+    --success-dark: 16 185 129; /* emerald-500 */
+
+    --pink-light: 249 168 212; /* pink-300 */
+    --pink-main: 244 114 182; /* pink-400 */
+    --pink-dark: 236 72 153; /* pink-500 */
+
+    --purple-light: 196 181 253; /* purple-300 */
+    --purple-main: 167 139 250; /* purple-400 */
+    --purple-dark: 139 92 246; /* purple-500 */
+
+    --orange-main: 251 146 60; /* orange-400 */
+    --orange-dark: 249 115 22; /* orange-500 */
+
+    --red-main: 248 113 113; /* red-400 */
+    --red-dark: 239 68 68; /* red-500 */
+
+    --amber-main: 245 158 11; /* amber-500 */
+}
+
+/* Background Pattern matching theme */
+.app-bg-pattern {
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTEgMWgydjJIMUMxeiIgZmlsbD0icmdiYSgwLDAsMCwwLjA1KSIgZmlsbC1ydWxlPSJldmVub2RkIi8+PC9zdmc+');
+}
+.dark .app-bg-pattern {
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTEgMWgydjJIMUMxeiIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjAyKSIgZmlsbC1ydWxlPSJldmVub2RkIi8+PC9zdmc+');
+}
+
+/* Custom Scrollbar */
+.custom-scrollbar::-webkit-scrollbar { width: 6px; height: 6px; }
+.custom-scrollbar::-webkit-scrollbar-track { background: rgb(var(--c-900)); }
+.custom-scrollbar::-webkit-scrollbar-thumb { background: rgb(var(--c-700)); border-radius: 4px; }
+.custom-scrollbar::-webkit-scrollbar-thumb:hover { background: rgb(var(--c-accent)); }
+
+/* Animations */
+.fade-in { animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Slide in animation for visual flair */
+.slide-in-right { animation: slideInRight 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+@keyframes slideInRight {
+    from { opacity: 0; transform: translateX(20px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+/* Input Styles */
+.cyber-input {
+    background-color: rgba(var(--c-900), 0.6);
+    border: 1px solid rgb(var(--c-700));
+    color: rgb(var(--t-main));
+    font-family: 'Fira Code', monospace;
+}
+.cyber-input:focus {
+    outline: none;
+    border-color: rgb(var(--c-accent));
+    box-shadow: 0 0 12px rgba(var(--c-accent), 0.2);
+    background-color: rgba(var(--c-900), 0.9);
+}
+.cyber-input.invalid {
+    border-color: rgb(var(--red-main));
+    box-shadow: 0 0 12px rgba(var(--red-main), 0.2);
+    color: rgb(var(--red-main));
+    animation: shake 0.3s cubic-bezier(.36,.07,.19,.97) both;
+}
+
+@keyframes shake {
+  10%, 90% { transform: translate3d(-1px, 0, 0); }
+  20%, 80% { transform: translate3d(2px, 0, 0); }
+  30%, 50%, 70% { transform: translate3d(-3px, 0, 0); }
+  40%, 60% { transform: translate3d(3px, 0, 0); }
+}
+
+/* Toggle Switch Customization (Week 1 breakdown) */
+input:checked ~ .dot {
+  transform: translateX(100%);
+  background-color: rgb(var(--c-glow));
+}
+input:checked ~ .block {
+  background-color: rgba(var(--c-accent), 0.2);
+  border-color: rgb(var(--c-accent));
+}
+
+/* Global transitions for theme switching */
+body, main, header, aside, div, span, p, h1, h2, h3, h4, button, input, .custom-scrollbar::-webkit-scrollbar-track, .custom-scrollbar::-webkit-scrollbar-thumb {
+    transition: background-color 0.4s ease, border-color 0.4s ease, color 0.4s ease;
+}
